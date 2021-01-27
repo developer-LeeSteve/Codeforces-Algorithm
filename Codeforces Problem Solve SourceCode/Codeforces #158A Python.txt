@@ -1,0 +1,11 @@
+import sys
+ 
+N, K = map(int, sys.stdin.readline().split())
+ 
+nums = list(map(int, sys.stdin.readline().split()))
+answer = 0
+ 
+for i in range(N):
+    if nums[i] >= nums[K-1] and nums[i] > 0:
+        answer += 1
+print(answer)
