@@ -1,0 +1,8 @@
+import sys
+ 
+W = int(sys.stdin.readline())
+ 
+if W%2 == 0 and W != 2:
+    print("YES")
+else:
+    print("NO")
