@@ -1,0 +1,13 @@
+import sys
+
+N = int(sys.stdin.readline())
+answer = 0
+
+for i in range(N):
+    command = str(sys.stdin.readline().strip())
+    if "++" in command:
+        answer += 1
+    elif "--" in command:
+        answer -= 1
+
+print(answer)
