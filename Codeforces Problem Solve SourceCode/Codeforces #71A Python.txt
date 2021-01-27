@@ -1,0 +1,10 @@
+import sys
+ 
+n = int(sys.stdin.readline())
+ 
+for i in range(n):
+    letter = str(sys.stdin.readline().strip())
+    if len(letter) <= 10:
+        print(letter)
+    else:
+        print(letter[0] + str(len(letter)-2) + letter[-1])
