@@ -1,0 +1,12 @@
+import sys
+
+count = 0
+a, b = map(int, sys.stdin.readline().split())
+
+while True:
+    if a > b:
+        break
+    a = a*3
+    b = b*2
+    count += 1
+print(count)
