@@ -1,0 +1,7 @@
+import sys
+
+k, n, w = map(int, sys.stdin.readline().split())
+if k*(w*(w+1))/2 -n > 0:
+    print("%.0f" %(k*(w*(w+1))/2 -n))
+else:
+    print(0)
