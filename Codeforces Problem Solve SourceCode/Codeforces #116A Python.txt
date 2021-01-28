@@ -1,0 +1,13 @@
+import sys
+
+N = int(sys.stdin.readline())
+temp = 0
+current = 0
+
+for i in range(N):
+    a, b = map(int, sys.stdin.readline().split())
+    current = current-a+b
+    if current > temp:
+        temp = current
+
+print(temp)
