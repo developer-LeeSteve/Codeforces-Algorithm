@@ -1,0 +1,15 @@
+import sys
+
+N = int(sys.stdin.readline())
+word = str(sys.stdin.readline().strip())
+word_list = list(word)
+count = 0
+
+for i in range(N):
+    if i != N-1:
+        if word_list[i] == word_list[i+1]:
+            word_list[i] = "0"
+            count += 1
+    elif i == N-1:
+        break
+print(count)
