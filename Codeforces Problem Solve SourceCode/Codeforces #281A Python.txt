@@ -1,0 +1,5 @@
+import sys
+
+word = str(sys.stdin.readline().strip())
+
+print(word[0].upper() + word[1:])
