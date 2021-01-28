@@ -1,0 +1,9 @@
+import sys
+
+word = str(sys.stdin.readline().strip())
+word_set_length = len(set(word))
+
+if word_set_length %2 == 0:
+    print("CHAT WITH HER!")
+else:
+    print("IGNORE HIM!")
