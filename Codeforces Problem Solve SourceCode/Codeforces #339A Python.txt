@@ -1,0 +1,15 @@
+import sys
+
+command = str(sys.stdin.readline().strip())
+nums = []
+
+for i in command:
+    if i.isnumeric():
+        nums.append(i)
+
+nums.sort()
+for j in range(len(nums)):
+    if j == 0:
+        print(nums[j], end="")
+    elif j > 0:
+        print("+" + nums[j], end="")
