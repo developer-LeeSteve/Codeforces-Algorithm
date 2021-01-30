@@ -1,0 +1,11 @@
+import sys
+
+N = int(sys.stdin.readline())
+word = str(sys.stdin.readline().strip())
+
+if word.count("A") > word.count("D"):
+    print("Anton")
+elif word.count("A") < word.count("D"):
+    print("Danik")
+else:
+    print("Friendship")
