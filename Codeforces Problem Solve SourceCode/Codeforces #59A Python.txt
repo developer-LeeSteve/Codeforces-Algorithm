@@ -1,0 +1,19 @@
+import sys
+
+word = str(sys.stdin.readline().strip())
+word_list  = list(word)
+lower_count = 0
+upper_count = 0
+
+for i in word_list:
+    if i.isupper():
+        upper_count += 1
+    else:
+        lower_count += 1
+
+if upper_count == lower_count:
+    print(word.lower())
+elif upper_count > lower_count:
+    print(word.upper())
+elif upper_count < lower_count:
+    print(word.lower())
