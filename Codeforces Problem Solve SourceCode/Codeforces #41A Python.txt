@@ -1,0 +1,9 @@
+import sys
+
+word1 = str(sys.stdin.readline().strip())
+word2 = str(sys.stdin.readline().strip())
+
+if word1 == word2[::-1]:
+    print("YES")
+else:
+    print("NO")
