@@ -1,0 +1,17 @@
+import sys
+ 
+n, t = map(int, sys.stdin.readline().split())
+
+line = str(sys.stdin.readline().strip())
+line_list = list(line)
+line_list_answer = list(line)
+
+for j in range(t):
+    for i in range(len(line_list)):
+        if i < len(line_list) -1:
+            if line_list[i] == "B" and line_list[i+1] == "G":
+                line_list_answer[i] = "G"
+                line_list_answer[i+1] = "B"
+    line_list = line_list_answer[:]
+
+print("".join(line_list_answer))
