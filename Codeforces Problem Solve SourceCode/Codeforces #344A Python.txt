@@ -1,0 +1,17 @@
+import sys
+
+N = int(sys.stdin.readline())
+magnets = []
+groups = 1
+
+for i in range(N):
+    magnets.append(str(sys.stdin.readline().strip()))
+
+for j in range(N):
+    if j != N-1:
+        if magnets[j][1] == magnets[j+1][0]:
+            groups += 1
+        else:
+            pass
+    
+print(groups)
