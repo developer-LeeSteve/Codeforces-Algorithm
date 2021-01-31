@@ -1,0 +1,13 @@
+import sys
+
+N = int(sys.stdin.readline())
+X = list(map(int, sys.stdin.readline().split()))
+Y = list(map(int, sys.stdin.readline().split()))
+set_XY = set(X[1:]+Y[1:])
+
+for i in range(N):
+    if i+1 not in set_XY:
+        print("Oh, my keyboard!")
+        break
+else:
+    print("I become the guy.")
