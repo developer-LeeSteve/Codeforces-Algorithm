@@ -1,0 +1,13 @@
+import sys
+
+N, H = map(int, sys.stdin.readline().split())
+integers = list(map(int, sys.stdin.readline().split()))
+count = 0
+
+for i in range(N):
+    if integers[i] > H:
+        count += 2
+    else:
+        count += 1
+
+print(count)
