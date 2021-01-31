@@ -1,0 +1,9 @@
+import sys
+
+word_set = set(str(sys.stdin.readline().strip()))
+answer = []
+for i in word_set:
+    if i.isalpha():
+        answer.append(i)
+
+print(len(answer))
