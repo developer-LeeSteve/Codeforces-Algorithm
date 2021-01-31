@@ -1,0 +1,9 @@
+import sys
+
+N = int(sys.stdin.readline())
+answer = list(map(int, sys.stdin.readline().split()))
+
+for i in range(N):
+    answer[i] = answer[i]/100
+
+print(("%.7f" %((sum(answer)/N)*100)))
