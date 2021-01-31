@@ -1,0 +1,12 @@
+import sys
+
+A = str(sys.stdin.readline().strip())
+B = str(sys.stdin.readline().strip())
+answer = ""
+
+for i in zip(A,B):
+    if len(set(i))==1:
+        answer += "0"
+    elif len(set(i))==2:
+        answer += "1"
+print(answer)
