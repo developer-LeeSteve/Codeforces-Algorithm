@@ -1,0 +1,5 @@
+import sys
+
+shoes = list(map(int, sys.stdin.readline().split()))
+
+print(4-len(set(shoes)))
