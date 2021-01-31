@@ -1,0 +1,9 @@
+import sys
+
+N = int(sys.stdin.readline())
+height = list(map(int, sys.stdin.readline().split()))
+
+if height.index(max(height)) >= N-height[::-1].index(min(height)):
+    print(height.index(max(height))+height[::-1].index(min(height))-1)
+else:
+    print(height.index(max(height))+height[::-1].index(min(height)))
