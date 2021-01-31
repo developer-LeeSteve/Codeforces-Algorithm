@@ -1,0 +1,23 @@
+import sys
+
+N = int(sys.stdin.readline())
+a = "that I love "
+b = "that I hate "
+temp = 1
+answer = "I hate "
+
+while True:
+    if N == 1:
+        answer += "it"
+        break
+    elif N > 1:
+        if temp == 1:
+            answer += a
+            N -= 1
+            temp = 2
+        elif temp == 2:
+            answer += b
+            N -= 1
+            temp = 1
+            
+print(answer)
