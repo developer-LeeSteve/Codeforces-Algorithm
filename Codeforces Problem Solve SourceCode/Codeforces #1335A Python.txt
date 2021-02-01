@@ -1,0 +1,10 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+for i in range(N):
+    num = int(sys.stdin.readline())
+    if num%2 == 0:
+        print(num//2 -1)
+    else:
+        print(num//2)
