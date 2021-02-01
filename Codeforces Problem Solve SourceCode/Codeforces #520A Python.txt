@@ -1,0 +1,13 @@
+import sys
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+N = int(sys.stdin.readline())
+word = str(sys.stdin.readline().strip())
+
+for i in alphabet:
+    if i not in word.lower():
+        print("NO")
+        break
+else:
+    print("YES")
+    
