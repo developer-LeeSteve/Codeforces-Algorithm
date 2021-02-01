@@ -1,0 +1,17 @@
+import sys
+
+word1 = str(sys.stdin.readline().strip())
+word2 = str(sys.stdin.readline().strip())
+word3 = str(sys.stdin.readline().strip())
+word_list = list(word1+word2)
+
+for i in range(len(word3)):
+    if word3[i] in word_list:
+        word_list[word_list.index(word3[i])] = 0
+    else:
+        word_list.append("-")
+
+if len(set(word_list)) == 1:
+    print("YES")
+else:
+    print("NO")
