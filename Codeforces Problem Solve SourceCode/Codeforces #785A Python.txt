@@ -1,0 +1,19 @@
+import sys
+
+N = int(sys.stdin.readline())
+faces = 0
+
+for i in range(N):
+    shape = sys.stdin.readline().strip()
+    if shape == 'Tetrahedron':
+        faces += 4
+    elif shape == 'Cube':
+        faces += 6
+    elif shape == 'Octahedron':
+        faces += 8
+    elif shape == "Dodecahedron":
+        faces += 12
+    elif shape == "Icosahedron":
+        faces += 20
+
+print(faces)
