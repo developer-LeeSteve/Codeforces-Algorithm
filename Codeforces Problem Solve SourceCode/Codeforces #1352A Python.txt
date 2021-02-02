@@ -1,0 +1,19 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    count = 0
+    num = int(sys.stdin.readline())
+    num_list = list(str(num))
+    save = []
+    if len(num_list) == 1:
+        print(count+1)
+        print(num)
+    else:
+        for i in range(len(num_list)):
+            if num_list[::-1][i] != "0" :
+                save.append(int(num_list[::-1][i])*(10**i))
+                count += 1
+        print(count)
+        print(" ".join([str(x) for x in save]))
