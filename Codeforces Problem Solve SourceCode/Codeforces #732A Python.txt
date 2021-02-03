@@ -1,0 +1,16 @@
+import sys
+
+k, r = map(int, sys.stdin.readline().split())
+i = 1
+temp = 0
+n = k
+
+while True:
+    temp = k%10
+    if temp == r or temp == 0:
+        break
+    else:
+        i += 1
+        k = k + n
+
+print(i)
