@@ -1,0 +1,16 @@
+import sys
+
+n, k = map(int, sys.stdin.readline().split())
+time = [5*(x+1) for x in range(n)]
+have = 240
+answer = k
+count = 0
+
+for i in range(n):
+    if answer + time[i] <= have:
+        count += 1
+        answer += time[i]
+    else:
+        break
+
+print(count)
