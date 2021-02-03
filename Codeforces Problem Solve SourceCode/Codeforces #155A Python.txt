@@ -1,0 +1,17 @@
+import sys
+
+N = int(sys.stdin.readline())
+scores = list(map(int, sys.stdin.readline().split()))
+big = scores[0]
+small = scores[0]
+count = 0
+
+for i in range(1, N):
+    if scores[i] > big:
+        count += 1
+        big = scores[i]
+    elif scores[i] < small:
+        count += 1
+        small = scores[i]
+
+print(count)
