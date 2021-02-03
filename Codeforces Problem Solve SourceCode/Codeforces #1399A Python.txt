@@ -1,0 +1,14 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    nums.sort()
+    for j in range(N-1):
+        if nums[j+1] - nums[j] > 1:
+            print("NO")
+            break
+    else:
+        print("YES")
