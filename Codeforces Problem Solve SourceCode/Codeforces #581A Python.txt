@@ -1,0 +1,26 @@
+import sys
+ 
+a, b = map(int, sys.stdin.readline().split())
+ 
+same = 0
+different = 0
+ 
+while True:
+    if a > 0 and b > 0:
+        a -= 1
+        b -=1
+        different += 1
+    elif a == 0 and b > 1:
+        b -= 2
+        same += 1
+    elif b == 0 and a > 1:
+        a -= 2
+        same += 1
+    elif a==0 and b==0:
+        break
+    elif a == 1 and b==0:
+        break
+    elif a ==0 and b==1:
+        break
+ 
+print(" ".join([str(different), str(same)]))
