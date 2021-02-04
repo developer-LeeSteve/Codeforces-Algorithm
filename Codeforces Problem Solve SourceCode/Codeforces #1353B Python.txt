@@ -1,0 +1,17 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N, K = map(int, sys.stdin.readline().split())
+    a = list(map(int, sys.stdin.readline().split()))
+    b = list(map(int, sys.stdin.readline().split()))
+    a.sort()
+    b.sort()
+    for j in range(K):
+        if a[0] < b[-1]:
+            a.append(b[-1])
+            del a[0]
+            del b[-1]
+    print(sum(a))
+    
