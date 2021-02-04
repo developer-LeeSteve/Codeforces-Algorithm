@@ -1,0 +1,10 @@
+import sys
+
+nums = list(map(int, sys.stdin.readline().split()))
+nums.sort()
+avg = int((sum(nums))/3)
+
+if abs(nums[0]-avg)+abs(nums[1]-avg)+abs(nums[2]-avg) > abs(nums[1]-nums[0])+ abs(nums[2]-nums[1]):
+    print(abs(nums[1]-nums[0])+ abs(nums[2]-nums[1]))
+else:
+    print(abs(nums[0]-avg)+abs(nums[1]-avg)+abs(nums[2]-avg))
