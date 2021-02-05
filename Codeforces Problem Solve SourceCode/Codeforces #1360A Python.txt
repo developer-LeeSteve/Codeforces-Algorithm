@@ -1,0 +1,20 @@
+import sys
+ 
+T = int(sys.stdin.readline())
+ 
+for i in range(T):
+    a, b = map(int, sys.stdin.readline().split())
+    if a == b:
+        area = 4*a*b
+    else:
+        area = 2*a*b
+    j = 1
+    if min(a,b)*2 >= max(a,b):
+        temp = min(a,b)*2
+    else:
+        temp = max(a,b)
+    while True:
+        if j**2 >= area and j >= temp:
+            print(j**2)
+            break
+        j += 1
