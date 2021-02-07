@@ -1,0 +1,15 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    x, y, n = map(int, sys.stdin.readline().split())
+    q = n//x
+    num = 0
+    while True:
+        num = x*q+y
+        if num > n:
+            q -= 1
+        elif num <= n:
+            print(num)
+            break
