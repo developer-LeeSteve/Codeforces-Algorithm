@@ -1,0 +1,19 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    a = list(map(int, sys.stdin.readline().split()))
+    b = list(map(int, sys.stdin.readline().split()))
+    test_a = []
+    test_b = []
+    a_min = min(a)
+    b_min = min(b)
+    count = 0
+    for j in range(N):
+        test_a.append(a[j] - a_min)
+        test_b.append(b[j] - b_min)
+    for k in zip(test_a, test_b):
+        count += max(k)
+    print(count)
