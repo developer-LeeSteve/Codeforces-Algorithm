@@ -1,0 +1,17 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    S = list(map(int, sys.stdin.readline().split()))
+    S.sort()
+    least = 0
+    for j in range(N-1):
+        if j == 0:
+            least = abs(S[j] - S[j+1])
+        elif abs(S[j] - S[j+1]) < least:
+            least = abs(S[j] - S[j+1])
+        else:
+            pass
+    print(least)
