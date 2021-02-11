@@ -1,0 +1,8 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    two_list = [2**(x+1) for x in range(N)]
+    print(two_list[-1]+sum(two_list[:int(len(two_list)/2)-1])-sum(two_list[int(len(two_list)/2)-1:-1]))
