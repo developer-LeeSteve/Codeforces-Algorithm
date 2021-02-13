@@ -1,0 +1,21 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+nums = []
+x = 1
+for i in range(9):
+    nums.append(str(x))
+    nums.append(str(x*11))
+    nums.append(str(x*111))
+    nums.append(str(x*1111))
+    x += 1
+
+answer = 0
+for i in range(T):
+    N = str(sys.stdin.readline().strip())
+    where = nums.index(N)
+    for j in range(where+1):
+        answer += len(nums[j])
+    print(answer)
+    answer = 0
