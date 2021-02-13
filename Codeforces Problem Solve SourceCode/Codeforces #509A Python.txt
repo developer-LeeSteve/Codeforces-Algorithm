@@ -1,0 +1,11 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = [[1]*N]
+    
+for i in range(N-1):
+    nums.append([1])
+    for j in range(N-1):
+        nums[-1].append(nums[i][j+1] + nums[i+1][j])
+
+print(max(nums[-1]))
