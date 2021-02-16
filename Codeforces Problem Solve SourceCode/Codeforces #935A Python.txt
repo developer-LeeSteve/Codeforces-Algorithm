@@ -1,0 +1,10 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = []
+
+for i in range(1, N+1):
+    if N%i == 0:
+        nums.append(i)
+
+print(len(nums)-1)
