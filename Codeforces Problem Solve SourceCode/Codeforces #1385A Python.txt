@@ -1,0 +1,19 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    x, y, z = map(int, sys.stdin.readline().split())
+    a = min(x, y)
+    b = min(x, z)
+    c = min(y, z)
+    if x not in [a,b,c]:
+        print("NO")
+    elif y not in [a,b,c]:
+        print("NO")
+    elif z not in [a,b,c]:
+        print("NO")
+    else:
+        print("YES")
+        print(" ".join([str(x) for x in [a,b,c]]))
+        
