@@ -1,0 +1,7 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    a, b, c, d = map(int, sys.stdin.readline().split())
+    print("%s %s %s" %(max(a, b), max(b, c), min(c, d)))
