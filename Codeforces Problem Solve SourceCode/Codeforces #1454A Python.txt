@@ -1,0 +1,14 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = [x+1 for x in range(N)]
+    if N%2 == 0:
+        print(" ".join([str(x) for x in nums[::-1]]))
+    elif N%2 != 0:
+        temp = nums[int(N/2)]
+        nums[int(N/2)] = nums[-1]
+        nums[-1] = temp
+        print(" ".join([str(x) for x in nums[::-1]]))
