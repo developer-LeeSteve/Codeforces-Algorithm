@@ -1,0 +1,11 @@
+import sys
+
+card = str(sys.stdin.readline().strip())
+cards = list(map(str, sys.stdin.readline().split()))
+
+for i in cards:
+    if card[0] in i or card[-1] in i:
+        print("YES")
+        break
+else:
+    print("NO")
