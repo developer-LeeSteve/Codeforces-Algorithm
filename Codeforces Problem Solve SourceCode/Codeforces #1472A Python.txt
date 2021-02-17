@@ -1,0 +1,22 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+answer = 1
+
+for i in range(T):
+    w, h, n = map(int, sys.stdin.readline().split())
+    while True:
+        if w%2 == 0:
+            w = int(w/2)
+            answer *= 2
+        if h%2 == 0:
+            h = int(h/2)
+            answer *= 2
+        if w%2 != 0 and h%2 != 0:
+            if answer >= n:
+                print("YES")
+            else:
+                print("NO")
+            break
+    answer = 1
