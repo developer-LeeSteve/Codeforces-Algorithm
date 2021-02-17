@@ -1,0 +1,23 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    even = 0
+    odd = 0
+    for i in range(N):
+        if nums[i]%2 != 0:
+            odd += 1
+        else:
+            even += 1
+    if odd == 0:
+        print("NO")
+    elif odd != 0 and even != 0:
+        print("YES")
+    elif even == 0:
+        if odd%2 == 0:
+            print("NO")
+        else:
+            print("YES")
