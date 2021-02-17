@@ -1,0 +1,7 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    print(" ".join([str(1) for x in range(N)]))
