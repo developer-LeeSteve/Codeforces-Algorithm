@@ -1,0 +1,7 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    H, M = map(int, sys.stdin.readline().split())
+    print((23-H)*60+(60-M))
