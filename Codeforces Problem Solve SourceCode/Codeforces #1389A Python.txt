@@ -1,0 +1,10 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    l, r = map(int, sys.stdin.readline().split())
+    if 2*l > r:
+        print(-1, -1)
+    else:
+        print(l, 2*l)
