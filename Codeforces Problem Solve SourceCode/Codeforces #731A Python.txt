@@ -1,0 +1,16 @@
+import sys
+
+word = str(sys.stdin.readline().strip())
+alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+answer = 0
+current = 0
+
+for i in range(len(word)):
+    if abs(alphabets.index(word[i]) - current) > min(alphabets.index(word[i]), current)+26-max(alphabets.index(word[i]), current):
+        answer += min(alphabets.index(word[i]), current)+26-max(alphabets.index(word[i]), current)
+    else:
+        answer += abs(alphabets.index(word[i]) - current)
+    current = alphabets.index(word[i])
+
+print(answer)
