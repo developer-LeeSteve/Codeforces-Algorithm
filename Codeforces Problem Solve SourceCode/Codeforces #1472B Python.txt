@@ -1,0 +1,21 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    candies = list(map(int, sys.stdin.readline().split()))
+    dp_1 = 0
+    dp_2 = 0
+    for j in candies:
+        if j == 1:
+            dp_1 += 1
+        else:
+            dp_2 += 1
+    if sum(candies)%2 == 0 and dp_1 >= 2:
+        print("YES")
+    elif dp_1 == 0 and N%2 == 0:
+        print("YES")
+    else:
+        print("NO")
+        
