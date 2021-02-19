@@ -1,0 +1,16 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+a = str(sys.stdin.readline().strip())
+b = str(sys.stdin.readline().strip())
+
+answer = 0
+
+for i in range(T):
+    if abs(int(a[i])-int(b[i])) > min(int(a[i]), int(b[i]))+10-max(int(a[i]), int(b[i])):
+        answer += min(int(a[i]), int(b[i]))+10-max(int(a[i]), int(b[i]))
+    else:
+        answer += abs(int(a[i])-int(b[i]))
+
+print(answer)        
