@@ -1,0 +1,18 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    n, x = map(int, sys.stdin.readline().split())
+    floors = []
+    for j in range(1000):
+        if j == 0:
+            floors.append([1, 2])
+            if n in floors[-1]:
+                print(1)
+                break
+        else:    
+            floors.append([x+1 for x in range(floors[-1][-1], j*x+2)])
+            if n in floors[-1]:
+                print(floors.index(floors[-1])+1)
+                break
