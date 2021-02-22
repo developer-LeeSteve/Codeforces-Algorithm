@@ -1,0 +1,23 @@
+import sys
+
+a, b, n = map(int, sys.stdin.readline().split())
+
+def gcd(x, y):
+    for i in reversed(range(1, max(x, y)+1)):
+        if x%i == 0 and y%i == 0:
+            return i
+    
+cnt = 0
+
+while n > 0:
+    if cnt == 0:
+        n -= gcd(a, n)
+        cnt = 1
+    elif cnt == 1:
+        n -= gcd(b, n)
+        cnt = 0
+
+if cnt == 0:
+    print(1)
+else:
+    print(0)
