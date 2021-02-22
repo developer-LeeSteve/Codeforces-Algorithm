@@ -1,0 +1,17 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    num_list = nums[:]
+    num_list.sort()
+    if num_list[0] + num_list[1] <= num_list[-1]:
+        a = nums.index(num_list[0]) + 1
+        nums[nums.index(num_list[0])] = 0
+        b = nums.index(num_list[1]) + 1
+        nums[nums.index(num_list[1])] = 0
+        print("%s %s %s" %(a, b, nums.index(num_list[-1])+1))
+    else:
+        print(-1)
