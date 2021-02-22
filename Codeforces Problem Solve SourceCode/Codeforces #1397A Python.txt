@@ -1,0 +1,15 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    string = ''
+    for j in range(N):
+        string += str(sys.stdin.readline().strip())
+    for k in set(string):
+        if string.count(k)%N != 0:
+            print("NO")
+            break
+    else:
+        print("YES")
