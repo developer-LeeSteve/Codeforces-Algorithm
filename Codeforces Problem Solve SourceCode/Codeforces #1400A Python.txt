@@ -1,0 +1,13 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = str(sys.stdin.readline().strip())
+    j = 0
+    answer = ''
+    while j < 2*N-1:
+        answer += nums[j]
+        j += 2
+    print(answer)
