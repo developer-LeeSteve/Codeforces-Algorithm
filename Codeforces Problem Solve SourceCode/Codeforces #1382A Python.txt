@@ -1,0 +1,15 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N, M = map(int, sys.stdin.readline().split())
+    a = list(map(int, sys.stdin.readline().split()))
+    b = list(map(int, sys.stdin.readline().split()))
+    for j in a:
+        if j in b:
+            print("YES")
+            print("%s %s" %(1, j))
+            break
+    else:
+        print("NO")
