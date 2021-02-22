@@ -1,0 +1,10 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = list(map(int, sys.stdin.readline().split()))
+dp = [1 for x in range(N)]
+
+for i in range(1, N):
+    if nums[i] > nums[i-1]:
+        dp[i] = dp[i-1] + 1
+print(max(dp))
