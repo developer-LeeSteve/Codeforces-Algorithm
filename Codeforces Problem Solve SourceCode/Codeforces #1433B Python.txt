@@ -1,0 +1,15 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    while True:
+        if nums[0] == 0:
+            del nums[0]
+        if nums[-1] == 0:
+            del nums[-1]
+        if nums[0] == 1 and nums[-1] == 1:
+            break
+    print(nums.count(0))
