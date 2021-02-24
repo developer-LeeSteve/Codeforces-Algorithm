@@ -1,0 +1,8 @@
+import sys
+
+a, b, c, d = map(int, sys.stdin.readline().split())
+
+bigCount = min(a, c, d) 
+smallCount = min(a-bigCount, b)
+
+print(256*bigCount + 32*smallCount)
