@@ -1,0 +1,9 @@
+import math
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    print(math.ceil(sum(nums)/N))
