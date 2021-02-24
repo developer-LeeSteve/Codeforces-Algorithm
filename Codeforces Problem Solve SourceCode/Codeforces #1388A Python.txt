@@ -1,0 +1,14 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    if N <= 30:
+        print("NO")
+    else:
+        print("YES")
+        if N == 36 or N == 40 or N == 44:
+            print("%s %s %s %s" %(6, 10, 15, N-31))
+        else:
+            print("%s %s %s %s" %(6, 10, 14, N-30))
