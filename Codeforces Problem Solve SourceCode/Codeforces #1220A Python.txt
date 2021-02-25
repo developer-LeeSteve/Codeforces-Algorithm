@@ -1,0 +1,15 @@
+import sys
+
+N = int(sys.stdin.readline())
+word = str(sys.stdin.readline())
+nums = []
+
+nCount = word.count('n')
+zCount = word.count('z')
+
+for i in range(nCount):
+    nums.append(1)
+for j in range(zCount):
+    nums.append(0)
+
+print(" ".join([str(x) for x in nums]))
