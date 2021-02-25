@@ -1,0 +1,28 @@
+import sys
+
+code = str(sys.stdin.readline().strip())
+code_list = list(code)
+answer = ''
+
+while True:
+    if len(code_list) == 0:
+        break
+    if code_list[0] == '.':
+        answer += '0'
+        del code_list[0]
+        continue
+    elif code_list[0] + code_list[1] == '--':
+        answer += '2'
+        del code_list[0]
+        del code_list[0]
+        continue
+    elif code_list[0] + code_list[1] == '-.':
+        answer += '1'
+        del code_list[0]
+        del code_list[0]
+        continue
+    else:
+        answer += '0'
+        del code_list[0]
+        continue
+print(answer)
