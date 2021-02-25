@@ -1,0 +1,17 @@
+import sys
+from collections import Counter
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    nums_copy = nums[:]
+    nums_copy.sort()
+    num_set = set(nums)
+    nums_counter = Counter(nums_copy)
+    sorted_counter = sorted(nums_counter.items(), key = lambda item: item[1])
+    if sorted_counter[0][1] != 1:
+        print(-1)
+    else:
+        print(nums.index(sorted_counter[0][0])+1)
