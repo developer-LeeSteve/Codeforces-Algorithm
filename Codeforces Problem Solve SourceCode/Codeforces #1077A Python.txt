@@ -1,0 +1,8 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    a, b, k = map(int, sys.stdin.readline().split())
+    answer = (k-int(k/2))*a - int(k/2)*b
+    print(answer)
