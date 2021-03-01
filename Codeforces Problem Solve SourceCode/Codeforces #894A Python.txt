@@ -1,0 +1,19 @@
+import sys
+
+word = str(sys.stdin.readline().strip())
+letters = []
+cnt = 0
+
+for i in word:
+    if i == 'A' or i == 'Q':
+        letters.append(i)
+
+for i in range(len(letters)):
+    if letters[i] == 'Q':
+        for j in range(i, len(letters)):
+            if letters[j] == 'A':
+                for k in range(j, len(letters)):
+                    if letters[k] == 'Q':
+                        cnt += 1
+
+print(cnt)
