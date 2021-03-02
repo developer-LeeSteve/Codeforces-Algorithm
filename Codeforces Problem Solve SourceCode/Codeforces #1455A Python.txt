@@ -1,0 +1,7 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    num = int(sys.stdin.readline())
+    print(len(str(num)))
