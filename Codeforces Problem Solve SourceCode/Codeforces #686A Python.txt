@@ -1,0 +1,16 @@
+import sys
+
+T, N = map(int, sys.stdin.readline().split())
+left, distressed = N, 0
+
+for i in range(T):
+    a, b = map(str, sys.stdin.readline().split())
+    if a == '+':
+        left += int(b)
+    elif a == '-':
+        if left >= int(b):
+            left -= int(b)
+        elif left < int(b):
+            distressed += 1
+
+print(" ".join(str(x) for x in [left, distressed]))
