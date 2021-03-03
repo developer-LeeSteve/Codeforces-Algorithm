@@ -1,0 +1,17 @@
+import sys
+
+N = int(sys.stdin.readline())
+num_list = []
+
+if N%2 != 0:
+    print(-1)
+elif N == 2:
+    print("%s %s" %(2, 1))
+else:
+    cnt = N//2
+    base = 2
+    for i in range(cnt):
+        num_list.append(base)
+        num_list.append(base-1)
+        base += 2
+    print(" ".join([str(x) for x in num_list]))
