@@ -1,0 +1,10 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    a, b, c, d = map(int, sys.stdin.readline().split())
+    if int((b-a)/(c+d)) == (b-a)/(c+d):
+        print(int((b-a)/(c+d)))
+    else:
+        print(-1)
