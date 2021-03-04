@@ -1,0 +1,12 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    num = str(sys.stdin.readline().strip())
+    if '1' not in num:
+        print(0)
+    else:
+        first_one = num.index('1')
+        last_one = len(num)-1-num[::-1].index('1')
+        print(num[first_one:last_one+1].count('0'))
