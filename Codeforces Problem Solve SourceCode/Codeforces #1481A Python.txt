@@ -1,0 +1,46 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    x, y = 0, 0
+    a, b = map(int, sys.stdin.readline().split())
+    order = str(sys.stdin.readline().strip())
+    length = len(order)
+    x_TF = True
+    y_TF = True
+    for j in range(length):
+        if order[j] == 'U':
+            y += 1
+        elif order[j] == 'D':
+            y -= 1
+        elif order[j] == 'R':
+            x += 1
+        elif order[j] == 'L':
+            x -= 1
+    if y != b:
+        if b < y:
+            if order.count('U') >= y-b:
+                y_TF = True
+            else:
+                y_TF = False
+        elif b > y:
+            if order.count('D') >= b-y:
+                y_TF = True
+            else:
+                y_TF = False
+    if x != a:
+        if a < x:
+            if order.count('R') >= x-a:
+                x_TF = True
+            else:
+                x_TF = False
+        elif a > x:
+            if order.count('L') >= a-x:
+                x_TF = True
+            else:
+                x_TF = False
+    if x_TF == True and y_TF == True:
+        print("YES")
+    else:
+        print("NO")
