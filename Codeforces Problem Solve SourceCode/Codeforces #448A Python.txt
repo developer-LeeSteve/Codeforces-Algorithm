@@ -1,0 +1,20 @@
+import sys
+
+a1, a2, a3 = map(int, sys.stdin.readline().split())
+b1, b2, b3 = map(int, sys.stdin.readline().split())
+shelves = int(sys.stdin.readline())
+
+if (a1+a2+a3) % 5 == 0:
+    a_shelves = (a1+a2+a3)//5
+else:
+    a_shelves = (a1+a2+a3)//5 + 1
+    
+if (b1+b2+b3) % 10 == 0:
+    b_shelves = (b1+b2+b3)//10
+else:
+    b_shelves = (b1+b2+b3)//10 + 1
+    
+if shelves >= a_shelves + b_shelves:
+    print("YES")
+else:
+    print("NO")
