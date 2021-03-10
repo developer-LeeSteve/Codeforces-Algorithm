@@ -1,0 +1,17 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    num = str(sys.stdin.readline().strip())
+    if '2020' in num[0:4] or '2020' in num[-4:]:
+        print("YES")
+    elif '20' in num[:2] and '20' in num[-2:]:
+        print("YES")
+    elif '2' in num[0] and '020' in num[-3:]:
+        print("YES")
+    elif '202' in num[:3] and '0' in num[-1]:
+        print("YES")
+    else:
+        print("NO")
