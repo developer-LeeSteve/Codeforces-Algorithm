@@ -1,0 +1,21 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    num = str(sys.stdin.readline().strip())
+    new_num = ''
+    answer = ''
+    for j in range(N):
+        if j == 0:
+            new_num += str(int(num[0]) + 1)
+            answer += '1'
+        elif j != 0:
+            if int(new_num[j-1]) == int(num[j]) + 1:
+                new_num += num[j]
+                answer += '0'
+            else:
+                new_num += str(int(num[j]) + 1)
+                answer += '1'
+    print(answer)
