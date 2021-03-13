@@ -1,0 +1,16 @@
+import sys
+
+T = int(sys.stdin.readline())
+word = str(sys.stdin.readline().strip())
+cnt = 1
+place = 0
+answer = ''
+
+while True:
+    answer += word[place:place+cnt][0]
+    place += cnt
+    cnt += 1
+    if place == T:
+        break
+
+print(answer)
