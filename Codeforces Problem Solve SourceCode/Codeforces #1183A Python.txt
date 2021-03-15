@@ -1,0 +1,10 @@
+import sys
+
+N = int(sys.stdin.readline())
+
+while True:
+    if sum([int(x) for x in str(N)])%4 == 0:
+        print(N)
+        break
+    else:
+        N += 1
