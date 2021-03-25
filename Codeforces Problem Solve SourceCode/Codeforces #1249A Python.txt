@@ -1,0 +1,21 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    nums.sort()
+    cnt = 0
+    for j in range(N):
+        if j == N-1:
+            break
+        if j == 0 and nums[j] + 1 == nums[j+1]:
+            cnt += 2
+        else:
+            if nums[j] + 1 == nums[j+1]:
+                cnt += 1
+    if cnt > 0:
+        print(2)
+    else:
+        print(1)
