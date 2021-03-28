@@ -1,0 +1,17 @@
+import sys
+
+A = int(sys.stdin.readline())
+A_list = list(map(int, sys.stdin.readline().split()))
+
+B = int(sys.stdin.readline())
+B_list = list(map(int, sys.stdin.readline().split()))
+
+a,b = 0, 0
+
+for i in range(A):
+    for j in range(B):
+        if A_list[i] + B_list[j] not in A_list and A_list[i] + B_list[j] not in B_list:
+            a = A_list[i]
+            b = B_list[j]
+        
+print(a, b)
