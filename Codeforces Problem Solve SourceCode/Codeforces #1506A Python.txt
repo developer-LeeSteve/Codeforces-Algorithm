@@ -1,0 +1,18 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    n, m, x = map(int, sys.stdin.readline().split())
+    temp1 = x%n
+    if temp1 == 0:
+        temp1 = n
+    temp2 = x//n
+    if temp2*n == x:
+        answer = (temp1-1)*m + temp2
+    else:
+        answer = (temp1-1)*m + temp2 + 1
+    if n == 1 and m == 1 and x == 1:
+        print(1)
+    else:
+        print(answer)
