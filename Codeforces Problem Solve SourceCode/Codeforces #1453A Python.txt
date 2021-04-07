@@ -1,0 +1,12 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    n, m = map(int, sys.stdin.readline().split())
+    bottom_nums = list(map(int, sys.stdin.readline().split()))
+    left_nums = list(map(int, sys.stdin.readline().split()))
+    answer = 0
+    for j in bottom_nums:
+        answer += j in left_nums
+    print(answer)
