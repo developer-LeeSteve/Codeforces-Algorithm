@@ -1,0 +1,48 @@
+import sys
+
+y, x = map(int, sys.stdin.readline().split())
+check_list= []
+answer = 0
+
+for i in range(y):
+    temp = list(map(str, sys.stdin.readline().split()))
+    temp_list = []
+    for j in range(x):
+        temp_list.append(temp[0][j])
+    check_list.append(temp_list)
+
+if x >= y:
+    for i in range(y):
+        if 'S' in check_list[i]:
+            pass
+        else:
+            answer += x
+            check_list[i] = [0]*x
+    for j in range(x):
+        for k in range(y):
+            if 'S' == check_list[k][j]:
+                break
+        else:
+            for k in range(y):
+                if check_list[k][j] == 0:
+                    pass
+                else:
+                    check_list[k][j] = 0
+                    answer += 1
+else:
+    for i in range(x):
+        for j in range(y):
+            if 'S' == check_list[j][i]:
+                break
+        else:
+            answer += y
+            for j in range(y):
+                check_list[j][i] = 0
+    for k in range(y):
+        if 'S' in check_list[k]:
+            pass
+        else:
+            answer += check_list[k].count('.')
+            check_list[k] = [0]*x
+
+print(answer)
