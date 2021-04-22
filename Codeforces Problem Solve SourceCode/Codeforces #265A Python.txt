@@ -1,0 +1,14 @@
+import sys
+
+tiles = str(sys.stdin.readline().strip())
+instruction = str(sys.stdin.readline().strip())
+
+answer = 0
+
+for i in instruction:
+    if tiles[answer] == i:
+        answer += 1
+    else:
+        pass
+    
+print(answer+1)
