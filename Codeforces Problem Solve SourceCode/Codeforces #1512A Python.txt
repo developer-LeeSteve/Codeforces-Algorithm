@@ -1,0 +1,13 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    num_list = list(map(int, sys.stdin.readline().split()))
+    num_set_list = list(set(num_list))
+    for i in num_set_list:
+        if num_list.count(i) == 1:
+            print(num_list.index(i)+1)
+        else:
+            pass
