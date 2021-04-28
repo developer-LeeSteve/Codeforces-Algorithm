@@ -1,0 +1,23 @@
+import sys
+
+T, C = map(int, sys.stdin.readline().split())
+nums = list(map(int, sys.stdin.readline().split()))
+
+answer = 0
+check = False
+i = 0
+
+while True:
+    if i == T:
+        break
+    if i == 0:
+        answer += 1
+        i += 1
+        continue
+    if i > 0 and nums[i] - nums[i-1] <= C:
+        answer += 1
+    elif i > 0 and nums[i] - nums[i-1] > C:
+        answer = 1
+    i += 1
+    
+print(answer)
