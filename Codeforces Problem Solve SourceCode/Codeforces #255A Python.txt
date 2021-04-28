@@ -1,0 +1,27 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = list(map(int, sys.stdin.readline().split()))
+
+count = 0
+chest = 0
+biceps = 0
+back = 0
+
+while True:
+    if count == N:
+        break
+    if count%3 == 0:
+        chest += nums[count]
+    elif count%3 == 1:
+        biceps += nums[count]
+    elif count%3 == 2:
+        back += nums[count]
+    count += 1
+
+if max(chest, biceps, back) == chest:
+    print("chest")
+elif max(chest, biceps, back) == biceps:
+    print('biceps')
+else:
+    print('back')
