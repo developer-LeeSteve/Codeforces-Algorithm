@@ -1,0 +1,12 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    n, x, a, b = map(int, sys.stdin.readline().split())
+    if a == 1 and b == n:
+        print(n-1)
+    elif a == n and b == 1:
+        print(n-1)
+    else:
+        print(min((abs(a-b)+x , n-1)))
