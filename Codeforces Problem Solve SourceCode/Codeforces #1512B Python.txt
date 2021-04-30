@@ -1,0 +1,43 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+def split(word):
+    return [char for char in word]
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    stars1 = []
+    stars = []
+    coordinate = []
+    new = []
+    
+    for j in range(N):
+        stars1.append(str(sys.stdin.readline().strip()))
+        stars.append(split(stars1[-1]))
+        
+    for k in range(N):
+        if '*' in stars1[k]:
+            if stars1[k].index('*') == N-1-stars1[k][::-1].index('*'):
+                coordinate.append([k, stars1[k].index('*')])
+            elif stars1[k].index('*') != N-1-stars1[k][::-1].index('*'):
+                coordinate.append([k, stars1[k].index('*')])
+                coordinate.append([k, N-1-stars1[k][::-1].index('*')])
+                
+    if coordinate[0][0] == coordinate[1][0]:
+        new.append([abs(coordinate[0][0]-1), coordinate[0][1]])
+        new.append([abs(coordinate[0][0]-1), coordinate[1][1]])
+        
+    elif coordinate[0][1] == coordinate[1][1]:
+        new.append([coordinate[0][0], abs(coordinate[0][1]-1)])
+        new.append([coordinate[1][0], abs(coordinate[0][1]-1)])
+        
+    else:    
+        new.append([coordinate[0][0], coordinate[1][1]])
+        new.append([coordinate[1][0], coordinate[0][1]])
+        
+    for l in new:
+        stars[l[0]][l[1]] = '*'
+        
+    for m in stars:
+        print("".join([str(x) for x in m]))
