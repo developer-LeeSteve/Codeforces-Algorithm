@@ -1,0 +1,17 @@
+import sys
+
+N = int(sys.stdin.readline())
+nums = list(map(int, sys.stdin.readline().split()))
+temp_list = []
+temp = 0
+
+for i in range(N):
+    if i == N-1:
+        temp_list.append(nums[temp:])
+        break
+    if nums[i] == nums[i+1] or nums[i] > nums[i+1]:
+        temp_list.append(nums[temp:i+1])
+        temp = i+1
+        
+print(len(temp_list))
+print(" ".join(str(max(x)) for x in temp_list))
