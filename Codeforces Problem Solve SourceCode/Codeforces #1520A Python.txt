@@ -1,0 +1,27 @@
+import sys, string
+
+T = int(sys.stdin.readline())
+
+for _ in range(T):
+    N = int(sys.stdin.readline())
+    words = str(sys.stdin.readline().strip())
+    history = []
+    current = ''
+    check = True
+    for i in range(N):
+        if i == 0:
+            history.append(words[i])
+            current = words[i]
+        if words[i] == current:
+            continue
+        elif words[i] != current:
+            if words[i] in history:
+                check = False
+                break
+            elif words[i] not in history:
+                history.append(words[i])
+                current = words[i]
+    if check:
+        print("YES")
+    else:
+        print("NO")
