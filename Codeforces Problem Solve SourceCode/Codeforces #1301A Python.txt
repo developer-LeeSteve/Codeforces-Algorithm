@@ -1,0 +1,20 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    a = list(map(str, sys.stdin.readline().strip()))
+    b = list(map(str, sys.stdin.readline().strip()))
+    c = list(map(str, sys.stdin.readline().strip()))
+    check = True
+    for j in range(len(c)):
+        if a[j] == b[j] and a[j] != c[j]:
+            check=False
+            break
+        if a[j] != b[j] and a[j] != c[j] and b[j] != c[j]:
+            check=False
+            break
+    if check:
+        print("YES")
+    else:
+        print("NO")
