@@ -1,0 +1,16 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    nums = list(map(int, sys.stdin.readline().split()))
+    nums_copy = nums[:]
+    nums_copy.sort()
+    biggest1 = nums_copy[0]
+    biggest2 = nums_copy[1]
+    final_index = [nums.index(biggest1), nums.index(biggest2)]
+    final_index.sort()
+    if final_index == [0,1] or final_index == [2,3]:
+        print("NO")
+    else:
+        print("YES")
