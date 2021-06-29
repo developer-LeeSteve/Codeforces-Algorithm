@@ -1,0 +1,13 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    big_idx = [nums.index(N)+1, N-nums.index(N)]
+    small_idx = [nums.index(1)+1, N-nums.index(1)]
+    a = max(big_idx[0], small_idx[0])
+    b = max(big_idx[1], small_idx[1])
+    c = min(big_idx[0], small_idx[0]) + min(big_idx[1], small_idx[1])
+    print(min(a, b, c))
