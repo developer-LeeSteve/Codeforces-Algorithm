@@ -1,0 +1,35 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    k = int(sys.stdin.readline())
+    temp = k
+    count = 2
+    two = 0
+    five = 0
+    while count > 0 and temp > 1:
+        if temp%2 == 0:
+            temp = temp//2
+            two += 1
+            count -= 1
+        else:
+            break
+    temp = k
+    count = 2
+    while count > 0 and temp > 1:
+        if temp%5 == 0:
+            temp = temp//5
+            five += 1
+            count -=1
+        else:
+            break
+    if k == 100:
+        print(1)
+    else:
+        answer = 100
+        if two != 0:
+            answer = int(100/(2**two))
+        if five != 0:
+            answer = int(answer/(5**five))
+        print(answer)
