@@ -1,0 +1,15 @@
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T):
+    N = int(sys.stdin.readline())
+    nums = list(map(int, sys.stdin.readline().split()))
+    nums.sort()
+    small = nums[:N]
+    big = nums[N:]
+    answer = []
+    for j in range(N):
+        answer.append(small[j])
+        answer.append(big[j])
+    print(" ".join(str(x) for x in answer))
